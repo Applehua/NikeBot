@@ -1,0 +1,7 @@
+<script language="JavaScript">
+    XMLHttpRequest.prototype.realSend = XMLHttpRequest.prototype.send;
+    XMLHttpRequest.prototype.send = function(data) {
+        this.setRequestHeader('x-requested-with', 'com.nike.snkrs');
+        this.realSend(data);
+    };
+</script>
